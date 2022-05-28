@@ -1,0 +1,26 @@
+{
+  "name": "basicnodejsapplication",
+  "version": "1.0.0",
+  "description": "Basic Node JS Application",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niketsharma19/BasicNodeJSApplication.git"
+  },
+  "author": "Niket Sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niketsharma19/BasicNodeJSApplication/issues"
+  },
+  "homepage": "https://github.com/niketsharma19/BasicNodeJSApplication#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
