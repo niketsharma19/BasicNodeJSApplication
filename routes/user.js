@@ -1,17 +1,27 @@
-const path = require("path");
-
 const express = require("express");
 
-const rootDir = require("../util/path");
+const getAllProducts = require("../controllers/controller").getAllProducts;
 
 const router = express.Router();
 
-router.get("/", (req, res, next) => {
-  if (req.url !== "/favicon.ico") {
-    console.log("In /!!");
-    res.sendFile(path.join(rootDir, "views", "shop.html"));
-    // res.send("<h1>Hello From Express</h1>");
-  }
-});
+router.get("/get-all-products", getAllProducts);
 
 module.exports = router;
+
+// (req, res, next) => {
+//   if (req.url !== "/favicon.ico") {
+//     console.log("In /!!");
+//     console.log(adminData.products);
+//     res.send(adminData.products);
+
+//     // res.render("shop", {
+//     //   prods: products,
+//     //   pageTitle: "Shop",
+//     //   path: "/",
+//     //   hasProducts: products.length > 0,
+//     //   activeShop: true,
+//     //   productCSS: true,
+//     // });
+//     // res.sendFile(path.join(rootDir, "views", "shop.html"));
+//   }
+// });

@@ -1,23 +1,26 @@
 const express = require("express");
 
-const path = require("path");
-
 const bodyParser = require("body-parser");
 
-const adminRouter = require("./routes/admin");
+const adminData = require("./routes/admin");
 const userRouter = require("./routes/user");
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use("/admin", adminRouter);
-app.use(userRouter);
+app.use(bodyParser.json());
+
+app.use("/admin", adminData.router);
+app.use("/user", userRouter);
 
 app.use("/", (req, res, next) => {
   console.log("NOT FOUND");
-  res.status(404).sendFile(path.join(__dirname, "views", "not-found.html"));
+  res.status(404).send("Page Not Found!!!");
 });
 
 app.listen(3000);
+
+// app.set("view engine", "ejs");
+// app.set("views", "views");
+// app.use(express.static(path.join(__dirname, "public")));
