@@ -31,11 +31,6 @@ module.exports = class Product {
   }
 
   static fetch(id) {
-    for (let product of products) {
-      if (product.id === id) {
-        return product;
-      }
-    }
-    return "Can not find the Product!!";
+    return products.find((product) => product.id === id);
   }
 };
