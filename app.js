@@ -4,6 +4,15 @@ const bodyParser = require("body-parser");
 
 const adminData = require("./routes/admin");
 const userRouter = require("./routes/user");
+const db = require("./util/database");
+
+db.execute("SELECT * FROM user")
+  .then((res) => {
+    console.log(res[0]);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 const app = express();
 
